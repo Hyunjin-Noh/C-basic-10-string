@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#define LEN 3
+
+void swap(char* a, char* b);
+int main()
+{
+    char str1[LEN]={0};
+    char str2[LEN]={0};
+    char biggerstr[LEN]={0};
+    
+    scanf("%s %s", str1, str2);
+    swap(&str1[0], &str1[2]);
+    swap(&str2[0], &str2[2]);
+    
+    if (strcmp(str1, str2)<0) strcpy(biggerstr,str2);
+    else strcpy(biggerstr,str1);
+    
+    printf("%s", biggerstr);
+    return 0;
+}
+
+void swap(char* a, char* b) {
+	char tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
