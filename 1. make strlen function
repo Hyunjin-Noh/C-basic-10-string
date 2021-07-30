@@ -1,0 +1,17 @@
+#include <stdio.h>
+//#include <string.h>의 strlen(str)함수 대신 내가 만들기
+int nowmakestrlen(char str[]) {
+    int i=0;
+    while(1) {
+            if(str[i]=='\0') break;
+            i++;
+        }
+    return i;//break 전까지의 i가 반환됨.
+}
+
+int main(){
+    char str[80];//임의로 크기 크게 선언해놓음.
+    scanf("%s", &str);
+    printf("%d", nowmakestrlen(str));
+    return 0;
+}
